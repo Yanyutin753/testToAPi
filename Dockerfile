@@ -10,8 +10,6 @@ COPY . /app
 # 设置环境变量
 ENV PYTHONUNBUFFERED=1
 
-ENV WERKZEUG_RUN_MAIN true
-
 RUN chmod +x /app/main.py
 
 # # 设置 pip 源为清华大学镜像
