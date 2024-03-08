@@ -21,4 +21,4 @@ RUN apt update && apt install -y jq
 RUN pip install --no-cache-dir flask flask_apscheduler requests Pillow flask-cors tiktoken fake_useragent redis websocket-client pysocks requests[socks] websocket-client[optional]
 
 # 在容器启动时运行 Flask 应用
-exec python3 main.py
+CMD ["python3", "main.py"]
