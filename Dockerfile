@@ -12,8 +12,6 @@ ENV PYTHONUNBUFFERED=1
 
 RUN chmod +x /app/main.py
 
-RUN apt update && apt install -y jq
-
 # # 设置 pip 源为清华大学镜像
 # RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
