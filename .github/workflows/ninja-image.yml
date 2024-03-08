@@ -41,6 +41,6 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-          yangclivia/pandora-to-api:${{ steps.tag_name.outputs.tag }}
+          yangclivia/pandora-to-api:test
         platforms: linux/amd64,linux/arm64
         build-args: TARGETPLATFORM=${{ matrix.platform }}
