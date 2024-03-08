@@ -10,7 +10,7 @@ COPY . /app
 # 设置环境变量
 ENV PYTHONUNBUFFERED=1
 
-RUN chmod +x /app/start.sh
+RUN chmod +x /app/main.py
 
 RUN apt update && apt install -y jq
 
@@ -18,7 +18,7 @@ RUN apt update && apt install -y jq
 # RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 安装任何所需的依赖项
-RUN pip install --no-cache-dir flask flask_apscheduler gunicorn requests Pillow flask-cors tiktoken fake_useragent redis websocket-client pysocks requests[socks] websocket-client[optional]
+RUN pip install --no-cache-dir flask flask_apscheduler requests Pillow flask-cors tiktoken fake_useragent redis websocket-client pysocks requests[socks] websocket-client[optional]
 
 # 在容器启动时运行 Flask 应用
-CMD ["/app/start.sh"]
+exec python3 main.py
